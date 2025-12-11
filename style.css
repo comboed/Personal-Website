@@ -1,0 +1,111 @@
+/* Global */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: white;
+    background: rgba(15, 14, 14, 0.925);
+    font-family: NTR, sans-serif;
+    font-size: 1.3rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    font-size: 1.5rem;
+}
+
+.nav-site,
+.nav-links {
+    display: flex;
+}
+
+.nav-site {
+    flex: 0.5;
+}
+
+.nav-site a {
+    margin-left: 1rem;
+}
+
+.nav-links {
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.nav-links a {
+    margin-right: 1rem;
+}
+
+/* Header */
+header {
+    text-align: center;
+}
+
+header h2 {
+    margin-top: -4rem;
+}
+
+header p {
+    margin: -2rem auto;
+    max-width: 625px;
+}
+
+.email-header {
+    display: inline-block;
+    border: 1px solid white;
+    margin-top: 80px;
+    padding: 10px 30px;
+    font-size: 1.5rem;
+}
+
+.email-header:hover {
+    background: rgb(78, 77, 77);
+}
+
+.email-icon {
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+    fill: white;
+}
+
+/* About Me */
+.about-me {
+    max-width: 1200px;
+    margin: 20rem auto 0;
+}
+
+.about-me h2 {
+    margin-bottom: -0.5rem;
+}
+
+.about-me-content {
+    display: flex;
+    align-items: center; /* vertical-align doesn't work on flex containers */
+    gap: 5rem;
+}
+
+.about-me-content img {
+    max-width: 300px;
+    border-radius: 20px;
+    flex-shrink: 0; /* prevents image from squishing on resize */
+}
+
+.about-me-content p {
+    max-width: 600px;
+    text-align: justify;
+}
+
+/* Responsive */
+@media (width <= 1300px) {
+    .nav-site {
+        display: none;
+    }
+}
