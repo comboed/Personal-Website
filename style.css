@@ -318,9 +318,20 @@ nav {
         grid-template-columns: 1fr;       
     }
 
+	body {
+		width: 100vw;
+		height: 100vh;
+	}
+
+    .about-me h2,
+    .about-header img,
+    .about-header p,
+	.nav-name {
+        display: none;
+    }
+
 	nav {
-		/* border: 5px solid red; */
-		/* gap: 60em; */
+		justify-content: center;
 	}
 
     .intro-header {
@@ -354,9 +365,4 @@ nav {
         text-align: center;
     }
 
-    .about-me h2,
-    .about-header img,
-    .about-header p {
-        display: none;
-    }
 }
