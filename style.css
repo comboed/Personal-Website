@@ -319,7 +319,8 @@ nav {
     }
 
 	nav {
-		border: 5px solid red;
+		/* border: 5px solid red; */
+		/* gap: 60em; */
 	}
 
     .intro-header {
