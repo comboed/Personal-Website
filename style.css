@@ -1,111 +1,325 @@
-/* Global */
+/* Base */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: system-ui, sans-serif;
 }
 
 body {
-    color: white;
-    background: rgba(15, 14, 14, 0.925);
-    font-family: NTR, sans-serif;
-    font-size: 1.3rem;
+	margin: 0;
+	color: black;
+	font-weight: 400;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+	text-decoration: none;
+	color: inherit;
+	transition: color 0.2s ease;
+}
+
+/* Underline */
+.underline {
+	position: relative;
+	display: inline-block;
+}
+
+.underline::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 85%;
+	width: 0;
+	height: 2px;
+	transition: 300ms;
+}
+
+.underline:hover::after {
+	width: 100%;
 }
 
 /* Navigation */
 nav {
-    display: flex;
-    font-size: 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	max-width: 55rem;
+	margin: auto;
+	padding: 1.5rem;
 }
 
-.nav-site,
-.nav-links {
-    display: flex;
+.nav-name {
+	font-size: 1.1rem;
+	font-weight: 400;
 }
 
-.nav-site {
-    flex: 0.5;
+.nav-items {
+	display: flex;
+	gap: 3rem;
+	font-size: 0.9rem;
 }
 
-.nav-site a {
-    margin-left: 1rem;
+.nav-name:hover,
+.nav-items a {
+	color: rgb(105, 105, 105);
 }
 
-.nav-links {
-    flex: 1;
-    justify-content: flex-end;
+.nav-items a:hover {
+	color: black;
 }
 
-.nav-links a {
-    margin-right: 1rem;
+.nav-items a.underline::after {
+	background: rgb(214, 211, 211);
 }
 
-/* Header */
-header {
-    text-align: center;
+.nav-line {
+	border-bottom: 1px solid rgba(196, 196, 196, 0.3);
 }
 
-header h2 {
-    margin-top: -4rem;
+/* Intro */
+.intro {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding: 48px;
+	gap: 8rem;
 }
 
-header p {
-    margin: -2rem auto;
-    max-width: 625px;
+.intro-header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
 }
 
-.email-header {
-    display: inline-block;
-    border: 1px solid white;
-    margin-top: 80px;
-    padding: 10px 30px;
-    font-size: 1.5rem;
+.intro h1,
+.intro h2 {
+	font-weight: inherit;
 }
 
-.email-header:hover {
-    background: rgb(78, 77, 77);
+.intro h1 {
+	font-size: 3rem;
 }
 
-.email-icon {
-    vertical-align: middle;
-    width: 1em;
-    height: 1em;
-    fill: white;
+.intro h2 {
+	color: rgb(74, 85, 101);
 }
 
-/* About Me */
-.about-me {
-    max-width: 1200px;
-    margin: 20rem auto 0;
+.intro a {
+	display: inline-block;
+	padding: 1.25rem;
+	font-weight: 500;
+	color: white;
+	background-color: black;
+	border-radius: 5px;
+	transition: background-color 0.1s ease;
 }
 
-.about-me h2 {
-    margin-bottom: -0.5rem;
+.intro a:hover {
+	background-color: rgb(50, 50, 50);
 }
 
-.about-me-content {
-    display: flex;
-    align-items: center; /* vertical-align doesn't work on flex containers */
-    gap: 5rem;
+.img-me {
+	width: 100%;
+	max-width: 500px;
+	border-radius: 25px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.about-me-content img {
-    max-width: 300px;
-    border-radius: 20px;
-    flex-shrink: 0; /* prevents image from squishing on resize */
+/* Footer */
+.footer-container {
+	display: flex;
+	justify-content: center;
+	color: gray;
 }
 
-.about-me-content p {
-    max-width: 600px;
-    text-align: justify;
+.footer-flex {
+	display: flex;
+	justify-content: space-between;
+	flex: 1;
+	max-width: 50rem;
+	padding-top: 48px;
+}
+
+.footer-links {
+	display: flex;
+	gap: 10px;
+}
+
+.footer-links svg {
+	height: 1.5rem;
+	transition: fill 0.2s ease;
+}
+
+.footer-links svg:hover {
+	fill: black;
+}
+
+.footer-line {
+	border-top: 1px solid rgba(196, 196, 196, 0.3);
 }
 
 /* Responsive */
-@media (width <= 1300px) {
-    .nav-site {
-        display: none;
-    }
+@media screen and (max-width: 900px) {
+	.intro {
+		grid-template-columns: 1fr;
+		text-align: center;
+	}
+
+	.intro-header {
+		align-items: center;
+	}
+
+	.img-me {
+		display: none;
+	}
+
+	.footer-flex {
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+	}
+}
+
+/* ABOUT */
+.about-me-grid {
+	max-width: 70rem;
+	padding: 46px;
+	margin: auto;
+	display: grid;
+	grid-template-areas:
+		"title ."
+		"image about"
+		"note .";
+	grid-template-columns: 1fr 1fr;
+}
+
+.about-me-grid h1 {
+	grid-area: title;
+	text-align: center;
+	font-weight: inherit;
+}
+
+.about-me-grid img {
+	grid-area: image;
+	margin: auto;
+	width: 100%;
+	border-radius: 25px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.about-me {
+	grid-area: about;
+	padding-left: 60px;
+	text-align: justify;
+}
+
+.about-me h2 {
+	font-weight: 300;
+	color: rgb(33, 35, 42);
+}
+
+.about-me p {
+	font-weight: 300;
+	font-size: 1.1rem;
+	line-height: 2rem;
+}
+
+.about-techflow,
+.about-ally {
+	transition: color 0.2s ease;
+}
+
+.about-ally:hover {
+	color: purple;
+}
+
+.about-techflow:hover {
+	color: rgb(255, 0, 140);
+}
+
+.about-ally.underline::after {
+	background: rgb(199, 38, 137);
+}
+
+.about-techflow.underline::after {
+	background: rgb(240, 105, 188);
+}
+
+.about-note {
+	grid-area: note;
+	text-align: center;
+	font-style: italic;
+	font-weight: 300;
+}
+
+/* About Responsive */
+@media screen and (max-width: 900px) {
+	.about-me-grid {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.about-note,
+	.about-me-grid img {
+		display: none;
+	}
+}
+
+/* Experience */
+.experience-header {
+	max-width: 55rem;
+	margin: auto;
+}
+
+.experience-header h1 {
+	font-weight: 300;
+}
+
+.experience-intro {
+	text-align: justify;
+	line-height: 2rem;
+	font-weight: 300;
+	font-size: 1.2rem;
+}
+
+.experience-grid {
+	display: grid;
+	grid-template-areas:
+		"ally ally-experience"
+		"techflow techflow-experience";
+	grid-template-columns: 1fr 5fr;
+	padding-top: 48px;
+	row-gap: 5rem;
+	column-gap: 3rem;
+}
+
+.ally-experience-img {
+	grid-area: ally;
+	align-self: center;
+	max-width: 15rem;
+}
+
+.ally-experience-img + .experience-section {
+	grid-area: ally-experience;
+}
+
+.techflow-experience-img {
+	grid-area: techflow;
+	align-self: center;
+	max-width: 15rem;
+}
+
+.techflow-experience-img + .experience-section {
+	grid-area: techflow-experience;
+}
+
+
+.experience-section h2,
+.experience-section h3,
+.experience-section h4,
+.experience-section p {
+	font-weight: 300;
+	margin-top: -10px;
+	text-align: justify;
+}
+
+.experience-section p {
+	line-height: 2rem;
 }
