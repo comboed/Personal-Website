@@ -313,26 +313,14 @@ nav {
    Media Queries
 ======================= */
 @media screen and (max-width: 900px) {
-    /* Intro adjustments */
-    .intro {
-        grid-template-columns: 1fr;       
-    }
-
-	body {
-		width: 100vw;
-		height: 100vh;
-	}
-
-    .about-me h2,
-    .about-header img,
-    .about-header p,
-	.nav-name {
-        display: none;
-    }
-
 	nav {
 		justify-content: center;
 	}
+	
+	/* Intro adjustments */
+    .intro {
+        grid-template-columns: 1fr;       
+    }
 
     .intro-header {
         align-items: center;
@@ -350,6 +338,10 @@ nav {
     }
 
     /* About adjustments */
+	.about-me {
+		max-width: 30rem;
+	}
+
     .about-me-grid {
         display: flex;
         flex-direction: column;
@@ -363,6 +355,26 @@ nav {
 
     .about-me h2 {
         text-align: center;
+    }
+
+	.experience-header {
+		max-width: 30rem;
+	}
+
+	.experience-grid {
+		display: flex;
+		flex-direction: column;
+		/* align-items: center; */
+	}
+
+	
+	/* Remove all images */
+    .about-me h2,
+    .about-header img,
+    .about-header p,
+	.nav-name,
+	.experience-grid img {
+        display: none;
     }
 
 }
