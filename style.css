@@ -1,325 +1,358 @@
-/* Base */
+/* =======================
+   Base
+======================= */
 * {
-	box-sizing: border-box;
-	font-family: system-ui, sans-serif;
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
 }
 
 body {
-	margin: 0;
-	color: black;
-	font-weight: 400;
+    margin: 0;
+    color: black;
 }
 
 a {
-	text-decoration: none;
-	color: inherit;
-	transition: color 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
 }
 
-/* Underline */
+/* Underline Animation */
 .underline {
-	position: relative;
-	display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 .underline::after {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 85%;
-	width: 0;
-	height: 2px;
-	transition: 300ms;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 85%;
+    width: 0;
+    height: 2px;
+    transition: width 300ms ease;
 }
 
 .underline:hover::after {
-	width: 100%;
+    width: 100%;
 }
 
-/* Navigation */
+/* =======================
+   Navigation
+======================= */
 nav {
-	display: flex;
-	justify-content: space-between;
-	max-width: 55rem;
-	margin: auto;
-	padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    max-width: 55rem;
+    margin: auto;
+    padding: 1.5rem;
 }
 
 .nav-name {
-	font-size: 1.1rem;
-	font-weight: 400;
+    font-size: 1.1rem;
+    font-weight: 400;
 }
 
 .nav-items {
-	display: flex;
-	gap: 3rem;
-	font-size: 0.9rem;
+    display: flex;
+    gap: 3rem;
+    font-size: 0.9rem;
 }
 
 .nav-name:hover,
 .nav-items a {
-	color: rgb(105, 105, 105);
+    color: rgb(105, 105, 105);
 }
 
 .nav-items a:hover {
-	color: black;
+    color: black;
 }
 
 .nav-items a.underline::after {
-	background: rgb(214, 211, 211);
+    background: rgb(214, 211, 211);
 }
 
 .nav-line {
-	border-bottom: 1px solid rgba(196, 196, 196, 0.3);
+    border-bottom: 1px solid rgba(196, 196, 196, 0.3);
 }
 
-/* Intro */
+/* =======================
+   Intro Section
+======================= */
 .intro {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	padding: 48px;
-	gap: 8rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 3rem;
+    gap: 8rem;
 }
 
 .intro-header {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .intro h1,
 .intro h2 {
-	font-weight: inherit;
+    font-weight: 400;
 }
 
 .intro h1 {
-	font-size: 3rem;
+    font-size: 3rem;
 }
 
 .intro h2 {
-	color: rgb(74, 85, 101);
+    color: rgb(74, 85, 101);
 }
 
 .intro a {
-	display: inline-block;
-	padding: 1.25rem;
-	font-weight: 500;
-	color: white;
-	background-color: black;
-	border-radius: 5px;
-	transition: background-color 0.1s ease;
+    display: inline-block;
+    padding: 1.25rem;
+    font-weight: 500;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    transition: background-color 0.1s ease;
 }
 
 .intro a:hover {
-	background-color: rgb(50, 50, 50);
+    background-color: rgb(50, 50, 50);
 }
 
 .img-me {
-	width: 100%;
-	max-width: 500px;
-	border-radius: 25px;
-	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 500px;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Footer */
-.footer-container {
-	display: flex;
-	justify-content: center;
-	color: gray;
+/* =======================
+   About Section
+======================= */
+.about-container {
+    max-width: 60rem;
+    margin: auto;
 }
 
-.footer-flex {
-	display: flex;
-	justify-content: space-between;
-	flex: 1;
-	max-width: 50rem;
-	padding-top: 48px;
+.about-container h1 {
+    font-weight: 300;
 }
 
-.footer-links {
-	display: flex;
-	gap: 10px;
-}
-
-.footer-links svg {
-	height: 1.5rem;
-	transition: fill 0.2s ease;
-}
-
-.footer-links svg:hover {
-	fill: black;
-}
-
-.footer-line {
-	border-top: 1px solid rgba(196, 196, 196, 0.3);
-}
-
-/* Responsive */
-@media screen and (max-width: 900px) {
-	.intro {
-		grid-template-columns: 1fr;
-		text-align: center;
-	}
-
-	.intro-header {
-		align-items: center;
-	}
-
-	.img-me {
-		display: none;
-	}
-
-	.footer-flex {
-		flex-direction: column;
-		align-items: center;
-		gap: 10px;
-	}
-}
-
-/* ABOUT */
 .about-me-grid {
-	max-width: 70rem;
-	padding: 46px;
-	margin: auto;
-	display: grid;
-	grid-template-areas:
-		"title ."
-		"image about"
-		"note .";
-	grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-template-areas: "image about";
+    grid-template-columns: 1fr 1fr;
 }
 
-.about-me-grid h1 {
-	grid-area: title;
-	text-align: center;
-	font-weight: inherit;
+.about-header {
+    grid-area: image;
+    margin: auto;
 }
 
-.about-me-grid img {
-	grid-area: image;
-	margin: auto;
-	width: 100%;
-	border-radius: 25px;
-	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+.about-header img {
+    max-width: 25rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.about-header p {
+    text-align: center;
 }
 
 .about-me {
-	grid-area: about;
-	padding-left: 60px;
-	text-align: justify;
+    grid-area: about;
+    align-self: center;
 }
 
 .about-me h2 {
-	font-weight: 300;
-	color: rgb(33, 35, 42);
+    color: rgb(33, 35, 42);
 }
 
 .about-me p {
-	font-weight: 300;
-	font-size: 1.1rem;
-	line-height: 2rem;
+    font-size: 1.1rem;
 }
 
 .about-techflow,
 .about-ally {
-	transition: color 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 .about-ally:hover {
-	color: purple;
+    color: purple;
 }
 
 .about-techflow:hover {
-	color: rgb(255, 0, 140);
+    color: rgb(255, 0, 140);
 }
 
 .about-ally.underline::after {
-	background: rgb(199, 38, 137);
+    background: rgb(199, 38, 137);
 }
 
 .about-techflow.underline::after {
-	background: rgb(240, 105, 188);
+    background: rgb(240, 105, 188);
 }
 
 .about-note {
-	grid-area: note;
-	text-align: center;
-	font-style: italic;
-	font-weight: 300;
+    font-style: italic;
 }
 
-/* About Responsive */
-@media screen and (max-width: 900px) {
-	.about-me-grid {
-		display: flex;
-		flex-direction: column;
-	}
-
-	.about-note,
-	.about-me-grid img {
-		display: none;
-	}
-}
-
-/* Experience */
+/* =======================
+   Experience Section
+======================= */
 .experience-header {
-	max-width: 55rem;
-	margin: auto;
-}
-
-.experience-header h1 {
-	font-weight: 300;
+    max-width: 55rem;
+    margin: auto;
 }
 
 .experience-intro {
-	text-align: justify;
-	line-height: 2rem;
-	font-weight: 300;
-	font-size: 1.2rem;
+    font-size: 1.2rem;
 }
 
 .experience-grid {
-	display: grid;
-	grid-template-areas:
-		"ally ally-experience"
-		"techflow techflow-experience";
-	grid-template-columns: 1fr 5fr;
-	padding-top: 48px;
-	row-gap: 5rem;
-	column-gap: 3rem;
+    display: grid;
+    grid-template-areas:
+        "ally ally-experience"
+        "techflow techflow-experience";
+    grid-template-columns: 1fr 5fr;
+    padding-top: 3rem;
+    row-gap: 5rem;
+    column-gap: 3rem;
 }
 
 .ally-experience-img {
-	grid-area: ally;
-	align-self: center;
-	max-width: 15rem;
+    grid-area: ally;
+    align-self: center;
+    max-width: 15rem;
 }
 
 .ally-experience-img + .experience-section {
-	grid-area: ally-experience;
+    grid-area: ally-experience;
 }
 
 .techflow-experience-img {
-	grid-area: techflow;
-	align-self: center;
-	max-width: 15rem;
+    grid-area: techflow;
+    align-self: center;
+    max-width: 15rem;
 }
 
 .techflow-experience-img + .experience-section {
-	grid-area: techflow-experience;
+    grid-area: techflow-experience;
 }
-
 
 .experience-section h2,
 .experience-section h3,
 .experience-section h4,
 .experience-section p {
-	font-weight: 300;
-	margin-top: -10px;
-	text-align: justify;
+    margin-top: -10px;
 }
 
 .experience-section p {
-	line-height: 2rem;
+    max-width: 30rem;
+}
+
+/* =======================
+   Footer Section
+======================= */
+.footer-container {
+    display: flex;
+    justify-content: center;
+    color: gray;
+}
+
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    max-width: 50rem;
+    padding-top: 3rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-links svg {
+    height: 1.5rem;
+    transition: fill 0.2s ease;
+}
+
+.footer-links svg:hover {
+    fill: black;
+}
+
+.footer-line {
+    border-top: 1px solid rgba(196, 196, 196, 0.3);
+}
+
+/* =======================
+   Shared Typography
+======================= */
+.about-me p,
+.experience-intro,
+.experience-section p {
+    font-weight: 300;
+    line-height: 2rem;
+    text-align: justify;
+}
+
+.about-me-grid h1,
+.about-me h2,
+.about-note,
+.experience-header h1,
+.experience-intro,
+.experience-section h2,
+.experience-section h3,
+.experience-section h4 {
+    font-weight: 300;
+}
+
+/* =======================
+   Media Queries
+======================= */
+@media screen and (max-width: 900px) {
+    /* Intro adjustments */
+    .intro {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .intro-header {
+        align-items: center;
+    }
+
+    .img-me {
+        display: none;
+    }
+
+    /* Footer adjustments */
+    .footer-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* About adjustments */
+    .about-me-grid {
+        display: flex;
+        flex-direction: column;
+        width: 35rem;
+        margin: auto;
+    }
+
+    .about-me-grid h1 {
+        text-align: center;
+    }
+
+    .about-me h2 {
+        text-align: center;
+    }
+
+    .about-me h2,
+    .about-header img,
+    .about-header p {
+        display: none;
+    }
 }
