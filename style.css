@@ -315,9 +315,12 @@ nav {
 @media screen and (max-width: 900px) {
     /* Intro adjustments */
     .intro {
-        grid-template-columns: 1fr;
-        text-align: center;
+        grid-template-columns: 1fr;       
     }
+
+	nav {
+		border: 5px solid red;
+	}
 
     .intro-header {
         align-items: center;
