@@ -135,7 +135,14 @@ nav {
     margin: auto;
 }
 
-.about-container h1 {
+.about-container h1,
+.about-me h2,
+.about-note,
+.experience-header h1,
+.experience-intro,
+.experience-section h2,
+.experience-section h3,
+.experience-section h4 {
     font-weight: 300;
 }
 
@@ -163,13 +170,19 @@ nav {
 .about-me {
     grid-area: about;
     align-self: center;
+    padding: 0;
 }
 
 .about-me h2 {
     color: rgb(33, 35, 42);
 }
 
-.about-me p {
+.about-me p,
+.experience-intro,
+.experience-section p {
+    font-weight: 300;
+    line-height: 2rem;
+    text-align: justify;
     font-size: 1.1rem;
 }
 
@@ -288,38 +301,15 @@ nav {
 }
 
 /* =======================
-   Shared Typography
-======================= */
-.about-me p,
-.experience-intro,
-.experience-section p {
-    font-weight: 300;
-    line-height: 2rem;
-    text-align: justify;
-}
-
-.about-me-grid h1,
-.about-me h2,
-.about-note,
-.experience-header h1,
-.experience-intro,
-.experience-section h2,
-.experience-section h3,
-.experience-section h4 {
-    font-weight: 300;
-}
-
-/* =======================
    Media Queries
 ======================= */
 @media screen and (max-width: 900px) {
-	nav {
-		justify-content: center;
-	}
-	
-	/* Intro adjustments */
+    nav {
+        justify-content: center;
+    }
+
     .intro {
-        grid-template-columns: 1fr;       
+        grid-template-columns: 1fr;
     }
 
     .intro-header {
@@ -330,51 +320,41 @@ nav {
         display: none;
     }
 
-    /* Footer adjustments */
     .footer-flex {
         flex-direction: column;
         align-items: center;
         gap: 10px;
     }
 
-    /* About adjustments */
-	.about-me {
-		max-width: 30rem;
-	}
+    .about-me {
+        padding: 24px;
+    }
 
     .about-me-grid {
         display: flex;
         flex-direction: column;
-        width: 35rem;
-        margin: auto;
     }
 
-    .about-me-grid h1 {
-        text-align: center;
-    }
-
+    .about-me-grid h1,
     .about-me h2 {
         text-align: center;
     }
 
-	.experience-header {
-		max-width: 30rem;
-	}
-
-	.experience-grid {
-		display: flex;
-		flex-direction: column;
-		/* align-items: center; */
-	}
-
-	
-	/* Remove all images */
-    .about-me h2,
-    .about-header img,
-    .about-header p,
-	.nav-name,
-	.experience-grid img {
-        display: none;
+    .experience-header {
+        padding: 24px;
     }
 
+    .experience-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Remove specific elements on small screens */
+    .about-header img,
+    .about-header p,
+    .about-me h2,
+    .nav-name,
+    .experience-grid img {
+        display: none;
+    }
 }
