@@ -315,10 +315,6 @@ nav {
         align-items: center;
     }
 
-    .img-me {
-        display: none;
-    }
-
     .footer-flex {
         flex-direction: column;
         align-items: center;
